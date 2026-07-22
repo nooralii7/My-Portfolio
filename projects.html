@@ -20,77 +20,144 @@
         </nav>
     </header>
 
-    <section class="section">
-        <h2>My Projects</h2>
-        
-        <div class="project-grid">
+    <div class="top-controls">
+        <button id="themeToggle" class="theme-btn">🌙 Switch to Dark Mode</button>
+    </div>
 
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="images/project1.png" alt="Portfolio Preview" class="project-img">
-                <h3>Portfolio Website</h3>
-                <p>My personal multi-page portfolio website built using HTML, CSS, and plain JavaScript.</p>
-                <span class="tag">HTML/CSS</span>
-
-                <div class="button-group">
-                    <button class="btn detail-btn" 
-                            data-title="Portfolio Website" 
-                            data-desc="Designed and built from scratch using semantic HTML structure, responsive CSS layout, and plain JavaScript logic.">
-                        Project Details
-                    </button>
-                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn btn-outline">View Code</a>
+    <main>
+        <section class="section">
+            <h2>Project Screenshots Gallery</h2>
+            
+            <!-- Interactive Image Gallery Slider -->
+            <div class="gallery-container">
+                <button class="gallery-btn prev-btn" id="prevSlide">❮</button>
+                <div class="gallery-slide">
+                    <img id="galleryImg" src="images/project1.png" alt="Project Screenshot">
+                    <div id="galleryCaption" class="gallery-caption">Project 1 Preview</div>
                 </div>
+                <button class="gallery-btn next-btn" id="nextSlide">❯</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>My Projects</h2>
+            
+            <div class="project-grid" id="projectGrid">
+
+                <!-- Core Project 1 -->
+                <article class="project-card">
+                    <img src="images/project1.png" alt="Portfolio Website Preview" class="project-img">
+                    <h3>Personal Portfolio Website</h3>
+                    <p class="course-info"><strong>Course:</strong> CS 101: Web Development | <strong>Professor:</strong> Dr. Smith</p>
+                    <p class="completion-date">📅 <strong>Completed:</strong> Spring 2026</p>
+                    <p class="description">A multi-page responsive personal portfolio built using standard web technologies.</p>
+                    <div class="tech-stack">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS Flexbox</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="hover-extra">✨ Features dynamic dark mode, real-time form validation, and interactive UI!</div>
+                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn btn-outline">View Details & Code</a>
+                </article>
+
+                <!-- Core Project 2 -->
+                <article class="project-card">
+                    <img src="images/project2.png" alt="Calculator App Preview" class="project-img">
+                    <h3>Web Calculator App</h3>
+                    <p class="course-info"><strong>Course:</strong> CS 102: JavaScript Applications | <strong>Professor:</strong> Prof. Davis</p>
+                    <p class="completion-date">📅 <strong>Completed:</strong> Fall 2025</p>
+                    <p class="description">An interactive web calculator that processes standard mathematical operations and keeps input history.</p>
+                    <div class="tech-stack">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">DOM Manipulation</span>
+                        <span class="tag">CSS Grid</span>
+                    </div>
+                    <div class="hover-extra">✨ Handles keyboard inputs, decimal calculations, and state management.</div>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Details & Code</a>
+                </article>
+
+                <!-- Core Project 3 -->
+                <article class="project-card">
+                    <img src="images/project3.png" alt="Task Tracker Preview" class="project-img">
+                    <h3>Student Task Tracker</h3>
+                    <p class="course-info"><strong>Course:</strong> CS 102: JavaScript Applications | <strong>Professor:</strong> Prof. Davis</p>
+                    <p class="completion-date">📅 <strong>Completed:</strong> Fall 2025</p>
+                    <p class="description">A productivity application allowing students to create, prioritize, complete, and delete daily tasks.</p>
+                    <div class="tech-stack">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Local Storage</span>
+                        <span class="tag">HTML5</span>
+                    </div>
+                    <div class="hover-extra">✨ Saves task items locally in the browser so data persists on page refresh.</div>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Details & Code</a>
+                </article>
+
+                <!-- Hidden Extra Project 4 -->
+                <article class="project-card extra-project hidden">
+                    <img src="images/project4.png" alt="Weather Dashboard Preview" class="project-img">
+                    <h3>Weather Forecast Dashboard</h3>
+                    <p class="course-info"><strong>Course:</strong> CS 201: Web APIs | <strong>Professor:</strong> Dr. Johnson</p>
+                    <p class="completion-date">📅 <strong>Completed:</strong> Winter 2025</p>
+                    <p class="description">Fetches live meteorological updates, wind conditions, and multi-day forecasts via OpenWeather API.</p>
+                    <div class="tech-stack">
+                        <span class="tag">REST API</span>
+                        <span class="tag">Async/Await</span>
+                        <span class="tag">CSS Flexbox</span>
+                    </div>
+                    <div class="hover-extra">✨ Dynamic weather icons change depending on temperature and precipitation.</div>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Details & Code</a>
+                </article>
+
+                <!-- Hidden Extra Project 5 -->
+                <article class="project-card extra-project hidden">
+                    <img src="images/project5.png" alt="Recipe Finder Preview" class="project-img">
+                    <h3>Interactive Recipe Finder</h3>
+                    <p class="course-info"><strong>Course:</strong> CS 201: Web APIs | <strong>Professor:</strong> Dr. Johnson</p>
+                    <p class="completion-date">📅 <strong>Completed:</strong> Winter 2025</p>
+                    <p class="description">Allows users to search for dishes by ingredient list and dietary filter restrictions.</p>
+                    <div class="tech-stack">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">JSON</span>
+                        <span class="tag">CSS UI Design</span>
+                    </div>
+                    <div class="hover-extra">✨ Includes dietary checkboxes for vegan, gluten-free, and nut-free recipes.</div>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Details & Code</a>
+                </article>
+
+                <!-- Hidden Extra Project 6 -->
+                <article class="project-card extra-project hidden">
+                    <img src="images/project6.png" alt="Campus Event Finder Preview" class="project-img">
+                    <h3>Campus Event Manager</h3>
+                    <p class="course-info"><strong>Course:</strong> CS 205: Software Engineering | <strong>Professor:</strong> Prof. Lee</p>
+                    <p class="completion-date">📅 <strong>Completed:</strong> Spring 2026</p>
+                    <p class="description">A web dashboard designed for university students to publish, browse, and register for campus activities.</p>
+                    <div class="tech-stack">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS Grid</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="hover-extra">✨ Filter events by date, academic department, or extracurricular category.</div>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Details & Code</a>
+                </article>
+
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="images/project2.png" alt="Calculator App Preview" class="project-img">
-                <h3>Calculator App</h3>
-                <p>A simple web calculator that performs basic mathematical operations.</p>
-                <span class="tag">JavaScript</span>
-
-                <div class="button-group">
-                    <button class="btn detail-btn" 
-                            data-title="Calculator App" 
-                            data-desc="Interactive web application that takes user button inputs, calculates mathematical values, and dynamically renders results on screen.">
-                        Project Details
-                    </button>
-                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Code</a>
-                </div>
+            <div class="toggle-container">
+                <button id="toggleProjectsBtn" class="btn">Show More Projects</button>
             </div>
+        </section>
+    </main>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="images/project3.png" alt="Task Tracker Preview" class="project-img">
-                <h3>Task Tracker</h3>
-                <p>A interactive to-do list app to help manage daily student assignments.</p>
-                <span class="tag">JavaScript</span>
-
-                <div class="button-group">
-                    <button class="btn detail-btn" 
-                            data-title="Task Tracker" 
-                            data-desc="Built to practice DOM manipulation in JavaScript. Allows users to add, mark complete, and remove tasks on the fly.">
-                        Project Details
-                    </button>
-                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Code</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Details Modal Popup -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h3 id="modalTitle">Project Title</h3>
-            <p id="modalDescription">Project description will appear here...</p>
-        </div>
+    <div id="liveClockContainer" class="clock-container">
+        <span id="liveClock">Loading current date & time...</span>
     </div>
 
     <footer>
-        <p>&copy; 2026 Noor Ali. Built with HTML, CSS, and JS.</p>
+        <p>&copy; 2026 Noor Ali. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:noor.ali@example.com">noor.ali@example.com</a></p>
     </footer>
+
+    <button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
 
     <script src="script.js"></script>
 </body>
