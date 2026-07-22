@@ -1,28 +1,27 @@
-// Wait until the HTML document is fully loaded before running script logic
+// Wait for the HTML document to fully load before attaching JavaScript listeners
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // Select the form and status elements
+
+    // Select the contact form elements from HTML
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
 
-    // Safety check: only run this code if the form actually exists on the page
+    // Check if the form exists on the current page (e.g., contact.html)
     if (contactForm) {
-        
-        // Listen for when the user clicks the submit button
+
         contactForm.addEventListener("submit", function (event) {
-            
-            // Prevent the page from refreshing when the form submits
+            // Prevent default page refresh on form submission
             event.preventDefault();
 
-            // Retrieve user's name input
+            // Read the user input from the 'Name' text field
             const userName = document.getElementById("name").value;
 
-            // Display a thank you message dynamically in green text
-            formStatus.textContent = "Thank you, " + userName + "! Your message has been sent.";
-            formStatus.style.color = "#27ae60";
+            // Display success feedback message on screen
+            formStatus.textContent = "Thank you, " + userName + "! Your message has been sent successfully.";
+            formStatus.style.color = "#27ae60"; // Green color indicator
 
-            // Clear out the form fields for the user
+            // Clear all input fields in the form
             contactForm.reset();
         });
     }
+
 });
