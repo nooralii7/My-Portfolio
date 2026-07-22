@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Noor Ali</title>
+    <title>Noor Ali - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">Noor Ali</div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Noor Ali</h1>
 
-    <!-- Theme Toggle Control -->
-    <div class="top-controls">
-        <button id="themeToggle" class="theme-btn">🌙 Switch to Dark Mode</button>
-    </div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <main>
-        <section class="hero">
-            <h1>Hi, I'm <span class="highlight">Noor Ali</span></h1>
-            <h2>Computer Science & Web Development Student</h2>
-            <p>Welcome to my personal portfolio website! Explore my projects, skills, and background.</p>
-            <a href="projects.html" class="btn">View My Work</a>
-        </section>
+<!-- Theme Toggle Control -->
+<div class="top-controls">
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+</div>
 
-        <section class="section home-intro">
-            <div class="about-container">
-                <img src="images/profile.jpg" alt="Noor Ali Profile Picture" class="profile-img">
-                <div>
-                    <h3>Welcome to my Web Space</h3>
-                    <p>This portfolio showcases my work across various web technologies, course assignments, and software projects developed using semantic HTML, custom CSS, and vanilla JavaScript.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<main>
 
-    <!-- Real-time Live Clock -->
-    <div id="liveClockContainer" class="clock-container">
-        <span id="liveClock">Loading current date & time...</span>
-    </div>
+    <section class="home-section">
 
-    <footer>
-        <p>&copy; 2026 Noor Ali. All Rights Reserved.</p>
-        <p>Contact: <a href="mailto:noor.ali@example.com">noor.ali@example.com</a></p>
-    </footer>
+        <h2>Welcome</h2>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
+        <img src="profile.jpeg" alt="Noor Ali" class="profile-image">
+        <h2>My Goals as a Computer Science Student</h2>
+        <p>
+            Welcome to my personal portfolio website. I recently completed my
+            Bachelor's degree in Computer Science. This website showcases my
+            background, technical skills, academic projects, and contact
+            information.
+        </p>
 
-    <script src="script.js"></script>
+        <p>
+            I am passionate about technology, cybersecurity, software
+            development, and continuing to expand my knowledge through
+            hands-on projects and learning new technologies.
+        </p>
+
+    </section>
+
+</main>
+
+<!-- Live Clock Section -->
+<div class="clock-container">
+    <span id="liveClock">Loading current time...</span>
+</div>
+
+<footer>
+    <p>
+        &copy; 2026 Noor Ali | Contact: <a href="mailto:noorali@gmail.com">noorali@gmail.com</a>
+    </p>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
