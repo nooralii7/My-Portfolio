@@ -52,10 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.getElementById("nextSlide");
 
     const slides = [
-        { src: "project1.png", caption: "Personal Portfolio Website Preview" },
-        { src: "project2.png", caption: "Interactive Calculator App Preview" },
-        { src: "project3.png", caption: "Cybersecurity Network Scanner Preview" },
-        { src: "project4.png", caption: "Student Task Tracker Preview" }
+        { src: "placeholder1.png", caption: "Personal Portfolio Website Preview" },
+        { src: "placeholder2.png", caption: "Interactive Calculator App Preview" },
+        { src: "placeholder13.png", caption: "Cybersecurity Network Scanner Preview" },
     ];
 
     let currentSlideIndex = 0;
