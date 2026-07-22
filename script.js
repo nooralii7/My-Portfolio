@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     // 1. Dynamic Clock (Updates every second)
     const liveClockEl = document.getElementById("liveClock");
 
@@ -21,14 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
     updateClock();
     setInterval(updateClock, 1000);
 
-
     // 2. Light / Dark Mode Toggle
     const themeToggleBtn = document.getElementById("themeToggle");
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
         document.body.classList.add("dark-mode");
-        if (themeToggleBtn) themeToggleBtn.textContent = "☀️ Light Mode";
+        if (themeToggleBtn) themeToggleBtn.textContent = "Light Mode";
     }
 
     if (themeToggleBtn) {
@@ -38,15 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (document.body.classList.contains("dark-mode")) {
                 theme = "dark";
-                themeToggleBtn.textContent = "☀️ Light Mode";
+                themeToggleBtn.textContent = "Light Mode";
             } else {
-                themeToggleBtn.textContent = "🌙 Dark Mode";
+                themeToggleBtn.textContent = "Dark Mode";
             }
 
             localStorage.setItem("theme", theme);
         });
     }
-
 
     // 3. Image Gallery Slider (Projects Page)
     const galleryImg = document.getElementById("galleryImg");
@@ -62,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     let currentSlideIndex = 0;
-
     function showSlide(index) {
         if (!galleryImg || !galleryCaption) return;
         galleryImg.src = slides[index].src;
@@ -74,20 +70,16 @@ document.addEventListener("DOMContentLoaded", function () {
             currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
             showSlide(currentSlideIndex);
         });
-
         nextBtn.addEventListener("click", function () {
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             showSlide(currentSlideIndex);
         });
-
         // Automatically change image every 5 seconds
         setInterval(function () {
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             showSlide(currentSlideIndex);
         }, 5000);
     }
-
-
     // 4. "Show More Projects" Toggle
     const toggleProjectsBtn = document.getElementById("toggleProjectsBtn");
 
@@ -108,8 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleProjectsBtn.textContent = isHidden ? "Show Less Projects" : "Show More Projects";
         });
     }
-
-
     // 5. Contact Form Validation
     const contactForm = document.getElementById("contactForm");
 
@@ -185,8 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-
     // 6. Back to Top Button
     const backToTopBtn = document.getElementById("backToTop");
 
