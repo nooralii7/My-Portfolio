@@ -1,27 +1,58 @@
-// Wait for the HTML document to fully load before attaching JavaScript listeners
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Select the contact form elements from HTML
+    // --- 1. Contact Form Functionality ---
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
 
-    // Check if the form exists on the current page (e.g., contact.html)
     if (contactForm) {
-
         contactForm.addEventListener("submit", function (event) {
-            // Prevent default page refresh on form submission
-            event.preventDefault();
+            event.preventDefault(); // Stop page reload
 
-            // Read the user input from the 'Name' text field
             const userName = document.getElementById("name").value;
 
-            // Display success feedback message on screen
+            // Display success message box
             formStatus.textContent = "Thank you, " + userName + "! Your message has been sent successfully.";
-            formStatus.style.color = "#27ae60"; // Green color indicator
+            formStatus.className = "status-message success";
 
-            // Clear all input fields in the form
+            // Clear inputs
             contactForm.reset();
         });
     }
+
+    // --- 2. Project Details Modal Functionality ---
+    const modal = document.getElementById("projectModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDescription");
+    const detailButtons = document.querySelectorAll(".detail-btn");
+
+    // Attach click event to all "Project Details" buttons
+    detailButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            // Read project info from data attributes
+            const title = this.getAttribute("data-title");
+            const desc = this.getAttribute("data-desc");
+
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+
+            // Show modal popup
+            modal.style.display = "flex";
+        });
+    });
+
+    // Close modal when clicking the 'X'
+    if (closeModal) {
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+    }
+
+    // Close modal when clicking outside the box
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 
 });
