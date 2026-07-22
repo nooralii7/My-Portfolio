@@ -13,6 +13,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -21,76 +22,74 @@
 
     <section class="section">
         <h2>My Projects</h2>
-        <p>Click on any project's details button to learn more about how it was constructed.</p>
-
+        
         <div class="project-grid">
 
             <!-- Project 1 -->
             <div class="project-card">
-                <div>
-                    <h3>Personal Portfolio</h3>
-                    <p>A personal multi-page portfolio website built to display web development projects.</p>
-                    <span class="tag">HTML / CSS / JS</span>
-                </div>
+                <img src="images/project1.png" alt="Portfolio Preview" class="project-img">
+                <h3>Portfolio Website</h3>
+                <p>My personal multi-page portfolio website built using HTML, CSS, and plain JavaScript.</p>
+                <span class="tag">HTML/CSS</span>
+
                 <div class="button-group">
-                    <!-- Button triggers JavaScript modal -->
-                    <button class="btn btn-secondary detail-btn" 
-                            data-title="Personal Portfolio" 
-                            data-desc="Built completely from scratch using semantic HTML, custom CSS flexbox, and vanilla JavaScript. Features a multi-page layout, dynamic modal overlays, and a interactive contact form validation system.">
+                    <button class="btn detail-btn" 
+                            data-title="Portfolio Website" 
+                            data-desc="Designed and built from scratch using semantic HTML structure, responsive CSS layout, and plain JavaScript logic.">
                         Project Details
                     </button>
-                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn">Source Code</a>
+                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn btn-outline">View Code</a>
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-card">
-                <div>
-                    <h3>Web Calculator</h3>
-                    <p>An interactive browser calculator that handles fundamental arithmetic operations.</p>
-                    <span class="tag">JavaScript</span>
-                </div>
+                <img src="images/project2.png" alt="Calculator App Preview" class="project-img">
+                <h3>Calculator App</h3>
+                <p>A simple web calculator that performs basic mathematical operations.</p>
+                <span class="tag">JavaScript</span>
+
                 <div class="button-group">
-                    <button class="btn btn-secondary detail-btn" 
-                            data-title="Web Calculator" 
-                            data-desc="Designed using CSS Grid for keypads and plain JavaScript event listeners to parse user input, manage execution order, and render output dynamically.">
+                    <button class="btn detail-btn" 
+                            data-title="Calculator App" 
+                            data-desc="Interactive web application that takes user button inputs, calculates mathematical values, and dynamically renders results on screen.">
                         Project Details
                     </button>
-                    <a href="https://github.com/nooralii7" target="_blank" class="btn">Source Code</a>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Code</a>
                 </div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-card">
-                <div>
-                    <h3>Task Tracker App</h3>
-                    <p>A web utility designed to assist students in tracking daily academic assignments.</p>
-                    <span class="tag">JavaScript</span>
-                </div>
+                <img src="images/project3.png" alt="Task Tracker Preview" class="project-img">
+                <h3>Task Tracker</h3>
+                <p>A interactive to-do list app to help manage daily student assignments.</p>
+                <span class="tag">JavaScript</span>
+
                 <div class="button-group">
-                    <button class="btn btn-secondary detail-btn" 
-                            data-title="Task Tracker App" 
-                            data-desc="Utilizes browser DOM manipulation to dynamically create, edit, and filter task items, giving immediate visual feedback upon task completion.">
+                    <button class="btn detail-btn" 
+                            data-title="Task Tracker" 
+                            data-desc="Built to practice DOM manipulation in JavaScript. Allows users to add, mark complete, and remove tasks on the fly.">
                         Project Details
                     </button>
-                    <a href="https://github.com/nooralii7" target="_blank" class="btn">Source Code</a>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn btn-outline">View Code</a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Modal Popup Box for Details -->
+    <!-- Details Modal Popup -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" id="closeModal">&times;</span>
             <h3 id="modalTitle">Project Title</h3>
-            <p id="modalDescription">Project description goes here...</p>
+            <p id="modalDescription">Project description will appear here...</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Noor Ali. All rights reserved.</p>
+        <p>&copy; 2026 Noor Ali. Built with HTML, CSS, and JS.</p>
     </footer>
 
     <script src="script.js"></script>
