@@ -58,27 +58,44 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     let currentSlideIndex = 0;
+    let autoSlideInterval = null;
+
     function showSlide(index) {
         if (!galleryImg || !galleryCaption) return;
         galleryImg.src = slides[index].src;
         galleryCaption.textContent = slides[index].caption;
     }
 
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener("click", function () {
-            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-            showSlide(currentSlideIndex);
-        });
-        nextBtn.addEventListener("click", function () {
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            showSlide(currentSlideIndex);
-        });
-        // Automatically change image every 5 seconds
-        setInterval(function () {
+    function startAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        
+        autoSlideInterval = setInterval(function () {
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             showSlide(currentSlideIndex);
         }, 5000);
     }
+
+    if (galleryImg && galleryCaption) {
+        if (prevBtn) {
+            prevBtn.addEventListener("click", function () {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                showSlide(currentSlideIndex);
+                startAutoSlide(); // Reset 5-second timer on manual click
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", function () {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                showSlide(currentSlideIndex);
+                startAutoSlide(); // Reset 5-second timer on manual click
+            });
+        }
+
+        // Start auto-slider when gallery elements exist
+        startAutoSlide();
+    }
+
     // 4. "Show More Projects" Toggle
     const toggleProjectsBtn = document.getElementById("toggleProjectsBtn");
 
@@ -99,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleProjectsBtn.textContent = isHidden ? "Show Less Projects" : "Show More Projects";
         });
     }
+
     // 5. Contact Form Validation
     const contactForm = document.getElementById("contactForm");
 
@@ -174,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
     // 6. Back to Top Button
     const backToTopBtn = document.getElementById("backToTop");
 
@@ -193,5 +212,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-
 });
