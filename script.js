@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ==========================================
-    // 1. Live Clock Updating Every Second
-    // ==========================================
+    // 1. Dynamic Clock (Updates every second)
     const liveClockEl = document.getElementById("liveClock");
 
     function updateClock() {
@@ -24,15 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateClock, 1000);
 
 
-    // ==========================================
-    // 2. Light / Dark Mode Theme Toggle
-    // ==========================================
+    // 2. Light / Dark Mode Toggle
     const themeToggleBtn = document.getElementById("themeToggle");
-    const currentTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme");
 
-    if (currentTheme === "dark") {
+    if (savedTheme === "dark") {
         document.body.classList.add("dark-mode");
-        if (themeToggleBtn) themeToggleBtn.textContent = "☀️ Switch to Light Mode";
+        if (themeToggleBtn) themeToggleBtn.textContent = "☀️ Light Mode";
     }
 
     if (themeToggleBtn) {
@@ -42,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (document.body.classList.contains("dark-mode")) {
                 theme = "dark";
-                themeToggleBtn.textContent = "☀️ Switch to Light Mode";
+                themeToggleBtn.textContent = "☀️ Light Mode";
             } else {
-                themeToggleBtn.textContent = "🌙 Switch to Dark Mode";
+                themeToggleBtn.textContent = "🌙 Dark Mode";
             }
 
             localStorage.setItem("theme", theme);
@@ -52,24 +48,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ==========================================
-    // 3. Project Gallery Image Slider & Auto-Cycle
-    // ==========================================
+    // 3. Image Gallery Slider (Projects Page)
     const galleryImg = document.getElementById("galleryImg");
     const galleryCaption = document.getElementById("galleryCaption");
     const prevBtn = document.getElementById("prevSlide");
     const nextBtn = document.getElementById("nextSlide");
 
     const slides = [
-        { src: "images/project1.png", caption: "Personal Portfolio Website Preview" },
-        { src: "images/project2.png", caption: "Web Calculator Application Preview" },
-        { src: "images/project3.png", caption: "Student Task Tracker Application Preview" },
-        { src: "images/project4.png", caption: "Weather Forecast Dashboard Preview" }
+        { src: "project1.png", caption: "Personal Portfolio Website Preview" },
+        { src: "project2.png", caption: "Interactive Calculator App Preview" },
+        { src: "project3.png", caption: "Cybersecurity Network Scanner Preview" },
+        { src: "project4.png", caption: "Student Task Tracker Preview" }
     ];
 
     let currentSlideIndex = 0;
 
-    function renderSlide(index) {
+    function showSlide(index) {
         if (!galleryImg || !galleryCaption) return;
         galleryImg.src = slides[index].src;
         galleryCaption.textContent = slides[index].caption;
@@ -78,25 +72,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (prevBtn && nextBtn) {
         prevBtn.addEventListener("click", function () {
             currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-            renderSlide(currentSlideIndex);
+            showSlide(currentSlideIndex);
         });
 
         nextBtn.addEventListener("click", function () {
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            renderSlide(currentSlideIndex);
+            showSlide(currentSlideIndex);
         });
 
-        // Automatic image rotation every 5 seconds
+        // Automatically change image every 5 seconds
         setInterval(function () {
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            renderSlide(currentSlideIndex);
+            showSlide(currentSlideIndex);
         }, 5000);
     }
 
 
-    // ==========================================
-    // 4. "Show More / Show Less" Projects Button
-    // ==========================================
+    // 4. "Show More Projects" Toggle
     const toggleProjectsBtn = document.getElementById("toggleProjectsBtn");
 
     if (toggleProjectsBtn) {
@@ -113,18 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            if (isHidden) {
-                toggleProjectsBtn.textContent = "Show Less Projects";
-            } else {
-                toggleProjectsBtn.textContent = "Show More Projects";
-            }
+            toggleProjectsBtn.textContent = isHidden ? "Show Less Projects" : "Show More Projects";
         });
     }
 
 
-    // ==========================================
     // 5. Contact Form Validation
-    // ==========================================
     const contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
@@ -139,63 +125,61 @@ document.addEventListener("DOMContentLoaded", function () {
         const messageError = document.getElementById("messageError");
         const formSuccess = document.getElementById("formSuccess");
 
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(String(email).toLowerCase());
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
         }
 
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
             let isValid = true;
 
-            // Reset Errors
-            [nameInput, emailInput, subjectInput, messageInput].forEach(input => input.classList.remove("input-error"));
-            [nameError, emailError, subjectError, messageError].forEach(span => span.textContent = "");
+            // Clear previous errors
+            [nameInput, emailInput, subjectInput, messageInput].forEach(i => i.classList.remove("input-error"));
+            [nameError, emailError, subjectError, messageError].forEach(s => s.textContent = "");
             formSuccess.style.display = "none";
 
-            // 1. Name Validation (Required, min 3 chars)
-            if (nameInput.value.trim() === "") {
+            // Name: Required & Min 3 Chars
+            if (!nameInput.value.trim()) {
                 nameError.textContent = "Name is required.";
                 nameInput.classList.add("input-error");
                 isValid = false;
             } else if (nameInput.value.trim().length < 3) {
-                nameError.textContent = "Name must be at least 3 characters long.";
+                nameError.textContent = "Name must be at least 3 characters.";
                 nameInput.classList.add("input-error");
                 isValid = false;
             }
 
-            // 2. Email Validation (Required, valid format)
-            if (emailInput.value.trim() === "") {
+            // Email: Required & Valid Format
+            if (!emailInput.value.trim()) {
                 emailError.textContent = "Email is required.";
                 emailInput.classList.add("input-error");
                 isValid = false;
-            } else if (!validateEmail(emailInput.value.trim())) {
+            } else if (!isValidEmail(emailInput.value.trim())) {
                 emailError.textContent = "Please enter a valid email address.";
                 emailInput.classList.add("input-error");
                 isValid = false;
             }
 
-            // 3. Subject Validation (Required)
-            if (subjectInput.value.trim() === "") {
+            // Subject: Required
+            if (!subjectInput.value.trim()) {
                 subjectError.textContent = "Subject is required.";
                 subjectInput.classList.add("input-error");
                 isValid = false;
             }
 
-            // 4. Message Validation (Required, min 20 chars)
-            if (messageInput.value.trim() === "") {
+            // Message: Required & Min 20 Chars
+            if (!messageInput.value.trim()) {
                 messageError.textContent = "Message is required.";
                 messageInput.classList.add("input-error");
                 isValid = false;
             } else if (messageInput.value.trim().length < 20) {
-                messageError.textContent = "Message must be at least 20 characters long.";
+                messageError.textContent = "Message must be at least 20 characters.";
                 messageInput.classList.add("input-error");
                 isValid = false;
             }
 
-            // Form Submit Success
             if (isValid) {
-                formSuccess.textContent = "✅ Thank you, " + nameInput.value.trim() + "! Your message has been sent successfully.";
+                formSuccess.textContent = "Thank you, " + nameInput.value.trim() + "! Your message passed validation and is ready to send.";
                 formSuccess.style.display = "block";
                 contactForm.reset();
             }
@@ -203,14 +187,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ==========================================
-    // 6. "Back to Top" Floating Button
-    // ==========================================
+    // 6. Back to Top Button
     const backToTopBtn = document.getElementById("backToTop");
 
     if (backToTopBtn) {
         window.addEventListener("scroll", function () {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 250) {
                 backToTopBtn.classList.add("show");
             } else {
                 backToTopBtn.classList.remove("show");
