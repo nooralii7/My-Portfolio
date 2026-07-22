@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Noor Ali</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">Noor Ali</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Contact Me</h1>
 
-    <div class="top-controls">
-        <button id="themeToggle" class="theme-btn">🌙 Switch to Dark Mode</button>
-    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
 
-    <main>
-        <section class="section">
-            <h2>Contact Me</h2>
-            <p>Have a question, feedback, or project opportunity? Send me a message below!</p>
-            
-            <form id="contactForm" novalidate>
-                <div class="form-group">
-                    <label for="name">Name <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" placeholder="Your Full Name">
-                    <span class="error-msg" id="nameError"></span>
-                </div>
+<div class="top-controls">
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+</div>
 
-                <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="name@example.com">
-                    <span class="error-msg" id="emailError"></span>
-                </div>
+<main>
 
-                <div class="form-group">
-                    <label for="subject">Subject <span class="required">*</span></label>
-                    <input type="text" id="subject" name="subject" placeholder="Reason for reaching out">
-                    <span class="error-msg" id="subjectError"></span>
-                </div>
+<section>
 
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message here (minimum 20 characters)..."></textarea>
-                    <span class="error-msg" id="messageError"></span>
-                </div>
+    <h2>Contact Form</h2>
 
-                <button type="submit" id="submitBtn" class="btn submit-btn">Submit Message</button>
-            </form>
+    <form id="contactForm" action="mailto:noorali@gmail.com" method="post" enctype="text/plain" novalidate>
 
-            <div id="formSuccess" class="success-message"></div>
-        </section>
-    </main>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error-msg" id="nameError"></span>
 
-    <div id="liveClockContainer" class="clock-container">
-        <span id="liveClock">Loading current date & time...</span>
-    </div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span class="error-msg" id="emailError"></span>
 
-    <footer>
-        <p>&copy; 2026 Noor Ali. All Rights Reserved.</p>
-        <p>Contact: <a href="mailto:noor.ali@example.com">noor.ali@example.com</a></p>
-    </footer>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+        <span class="error-msg" id="subjectError"></span>
 
-    <button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6"></textarea>
+        <span class="error-msg" id="messageError"></span>
 
-    <script src="script.js"></script>
+        <input type="submit" id="submitBtn" value="Submit">
+
+    </form>
+
+    <div id="formSuccess" class="success-message"></div>
+
+</section>
+
+</main>
+
+<div class="clock-container">
+    <span id="liveClock">Loading current time...</span>
+</div>
+
+<footer>
+    <p>
+        &copy; 2026 Noor Ali | Contact: <a href="mailto:noorali@gmail.com">noorali@gmail.com</a>
+    </p>
+</footer>
+
+<button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
