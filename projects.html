@@ -1,135 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Noor Ali</title>
-
+    <title>My Projects - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header>
-    <h1>Projects</h1>
+    <header>
+        <div class="logo">Noor Ali</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <section class="section">
+        <h2>My Projects</h2>
+        <p>Here are some of the applications and sites I have built while learning web development.</p>
 
-<main>
+        <div class="project-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>My personal portfolio created with HTML, CSS, and plain JavaScript.</p>
+                <span class="tag">HTML/CSS/JS</span>
+                
+                <div class="button-group">
+                    <!-- Link to repository or page -->
+                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn">View Code</a>
+                </div>
+            </div>
 
-<section>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Calculator App</h3>
+                <p>A web calculator that performs simple arithmetic functions.</p>
+                <span class="tag">JavaScript</span>
+                
+                <div class="button-group">
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn">View Project</a>
+                </div>
+            </div>
 
-    <h2>My Projects</h2>
+        </div>
+    </section>
 
-    <!-- Project 1 -->
-    <article class="project-card">
+    <footer>
+        <p>&copy; 2026 Noor Ali</p>
+    </footer>
 
-        <h3>Project 1: Online Store Database</h3>
-
-        <p>
-            Created a Java application connected to a MySQL database for
-            managing products, customers, and purchase records.
-        </p>
-
-        <p>
-            <strong>Technologies:</strong> Java, MySQL
-        </p>
-
-        <img
-            src="placeholder1.jpg"
-            alt="Online Store Database project"
-            class="project-image">
-
-        <p>
-            <strong>Course:</strong> Database Management
-        </p>
-
-        <p>
-            <strong>Professor:</strong> Professor Smith
-        </p>
-
-        <a href="#">Project Details</a>
-
-    </article>
-
-    <!-- Project 2 -->
-    <article class="project-card">
-
-        <h3>Project 2: Movie Recommendation System</h3>
-
-        <p>
-            Designed a desktop application that recommends movies using
-            collaborative filtering and a JavaFX user interface.
-        </p>
-
-        <p>
-            <strong>Technologies:</strong> Java, JavaFX, MySQL
-        </p>
-
-        <img
-            src="placeholder2.jpg"
-            alt="Movie Recommendation System project"
-            class="project-image">
-
-        <p>
-            <strong>Course:</strong> Software Engineering
-        </p>
-
-        <p>
-            <strong>Professor:</strong> Professor Johnson
-        </p>
-
-        <a href="#">Project Details</a>
-
-    </article>
-
-    <!-- Project 3 -->
-    <article class="project-card">
-
-        <h3>Project 3: SyncRGB</h3>
-
-        <p>
-            Developed a desktop application that synchronizes RGB lighting
-            with Fortnite events using Arduino and the Overwolf API.
-        </p>
-
-        <p>
-            <strong>Technologies:</strong> JavaScript, Node.js, Arduino
-        </p>
-
-        <img
-            src="placeholder3.jpg"
-            alt="SyncRGB project"
-            class="project-image">
-
-        <p>
-            <strong>Course:</strong> Senior Project
-        </p>
-
-        <p>
-            <strong>Professor:</strong> Professor Williams
-        </p>
-
-        <a href="#">Project Details</a>
-
-    </article>
-
-</section>
-
-</main>
-
-<footer>
-    <p>&copy; 2026 Noor Ali</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
