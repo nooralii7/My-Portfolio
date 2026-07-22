@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects - Portfolio</title>
+    <title>Projects - Noor Ali</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -21,38 +21,76 @@
 
     <section class="section">
         <h2>My Projects</h2>
-        <p>Here are some of the applications and sites I have built while learning web development.</p>
+        <p>Click on any project's details button to learn more about how it was constructed.</p>
 
         <div class="project-grid">
-            
+
             <!-- Project 1 -->
             <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>My personal portfolio created with HTML, CSS, and plain JavaScript.</p>
-                <span class="tag">HTML/CSS/JS</span>
-                
+                <div>
+                    <h3>Personal Portfolio</h3>
+                    <p>A personal multi-page portfolio website built to display web development projects.</p>
+                    <span class="tag">HTML / CSS / JS</span>
+                </div>
                 <div class="button-group">
-                    <!-- Link to repository or page -->
-                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn">View Code</a>
+                    <!-- Button triggers JavaScript modal -->
+                    <button class="btn btn-secondary detail-btn" 
+                            data-title="Personal Portfolio" 
+                            data-desc="Built completely from scratch using semantic HTML, custom CSS flexbox, and vanilla JavaScript. Features a multi-page layout, dynamic modal overlays, and a interactive contact form validation system.">
+                        Project Details
+                    </button>
+                    <a href="https://github.com/nooralii7/My-Portfolio" target="_blank" class="btn">Source Code</a>
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-card">
-                <h3>Calculator App</h3>
-                <p>A web calculator that performs simple arithmetic functions.</p>
-                <span class="tag">JavaScript</span>
-                
+                <div>
+                    <h3>Web Calculator</h3>
+                    <p>An interactive browser calculator that handles fundamental arithmetic operations.</p>
+                    <span class="tag">JavaScript</span>
+                </div>
                 <div class="button-group">
-                    <a href="https://github.com/nooralii7" target="_blank" class="btn">View Project</a>
+                    <button class="btn btn-secondary detail-btn" 
+                            data-title="Web Calculator" 
+                            data-desc="Designed using CSS Grid for keypads and plain JavaScript event listeners to parse user input, manage execution order, and render output dynamically.">
+                        Project Details
+                    </button>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn">Source Code</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div>
+                    <h3>Task Tracker App</h3>
+                    <p>A web utility designed to assist students in tracking daily academic assignments.</p>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary detail-btn" 
+                            data-title="Task Tracker App" 
+                            data-desc="Utilizes browser DOM manipulation to dynamically create, edit, and filter task items, giving immediate visual feedback upon task completion.">
+                        Project Details
+                    </button>
+                    <a href="https://github.com/nooralii7" target="_blank" class="btn">Source Code</a>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- Modal Popup Box for Details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3 id="modalTitle">Project Title</h3>
+            <p id="modalDescription">Project description goes here...</p>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Noor Ali</p>
+        <p>&copy; 2026 Noor Ali. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
