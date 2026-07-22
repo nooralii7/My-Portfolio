@@ -13,14 +13,8 @@ This website consists of four main pages:
 
 ## Technologies Used
 
-* HTML5 - Structure and content layout
-* CSS3 - Styling and visual design (style.css)
-
-## How to Run the Project
-
-1. Clone or download this repository to your local machine.
-2. Open the project folder.
-3. Open `index.html` in any web browser to view the website.
+* HTML - Structure and content layout
+* CSS - Styling and visual design (style.css)
 
 ## Author
 **Noor Ali**
