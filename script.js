@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = [
         { src: "placeholder1.png", caption: "Personal Portfolio Website Preview" },
         { src: "placeholder2.png", caption: "Interactive Calculator App Preview" },
-        { src: "placeholder13.png", caption: "Cybersecurity Network Scanner Preview" },
+        { src: "placeholder3.png", caption: "Cybersecurity Network Scanner Preview" },
     ];
 
     let currentSlideIndex = 0;
